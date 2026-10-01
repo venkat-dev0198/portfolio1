@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nunavath Gowtham | AI & ML Engineer | Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Nunavath Gowtham - B.Tech CSE (AI & ML) Engineer building innovative AI, Computer Vision, and Full Stack Web & Mobile solutions.">
+  <meta name="keywords" content="Nunavath Gowtham, AI ML Engineer, Computer Vision, MediaPipe, React.js, Python, EduGesture 3D, Full Stack Developer, Hyderabad, India">
+  <meta property="og:title" content="Nunavath Gowtham | AI & ML Engineer">
+  <meta property="og:description" content="Turning complex AI & Computer Vision ideas into intuitive, high-impact digital experiences.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- EmailJS SDK - For contact form email delivery -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <!-- Dynamic Spotlight Canvas/Background -->
+  <div id="spotlight-bg" class="spotlight-bg"></div>
+
+  <!-- Ambient Glow Gradients -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed-nav-wrapper">
+    <nav class="nav-container">
+      <!-- Left: Theme Toggle -->
+      <div class="nav-left">
+        <button id="theme-toggle" class="glass-btn icon-btn" aria-label="Toggle dark/light theme">
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+      </div>
+
+      <!-- Center: Navigation Pill Links (Desktop) -->
+      <div class="nav-center desktop-only">
+        <div class="glass-pill-nav">
+          <a href="#home" class="nav-link active"><span class="pill-highlight"></span><span class="nav-text">Home</span></a>
+          <a href="#about" class="nav-link"><span class="nav-text">About</span></a>
+          <a href="#projects" class="nav-link"><span class="nav-text">Projects</span></a>
+          <a href="#skills" class="nav-link"><span class="nav-text">Skills</span></a>
+          <a href="#other" class="nav-link"><span class="nav-text">Certificates</span></a>
+        </div>
+      </div>
+
+      <!-- Right: Book a Call CTA, Resume Button & Mobile Menu Toggle -->
+      <div class="nav-right">
+        <button id="nav-resume-btn" class="glass-btn resume-nav-btn" title="View & Download Nunavath Gowtham's Resume">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+          <span class="btn-text">Resume</span>
+        </button>
+
+        <button id="book-call-btn" class="glass-btn cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          <span class="btn-text">Connect / Hire</span>
+        </button>
+
+        <button id="mobile-menu-toggle" class="glass-btn icon-btn mobile-only" aria-label="Toggle mobile menu">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="mobile-dropdown">
+      <div class="mobile-menu-inner glass-card">
+        <a href="#home" class="mobile-nav-link active">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#other" class="mobile-nav-link">Certificates</a>
+        <button id="mobile-resume-btn" class="mobile-cta-btn resume-mobile-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+          <span>View Resume (PDF)</span>
+        </button>
+        <button id="mobile-book-btn" class="mobile-cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          <span>Connect / Hire</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+    
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="section hero-section">
+      <div class="hero-container">
+        
+        <!-- Avatar & Status Ring -->
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-ring-glow"></div>
+          <div class="avatar-box">
+            <div class="avatar-inner">
+              <img src="profile.jpg" alt="Nunavath Gowtham" class="avatar-photo">
+            </div>
+            <div class="status-indicator-badge" title="Open to Opportunities & Internships">
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shimmer Title -->
+        <div class="hero-title-box">
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient-shimmer">Nunavath Gowtham</span>
+          </h1>
+          <p class="hero-subtitle">
+            B.Tech CSE (AI & ML) Engineer specializing in Computer Vision, Generative AI, and Full Stack Web Applications.
+          </p>
+          
+          <!-- Hero Quick Action Buttons -->
+          <div class="hero-actions-row">
+            <button id="hero-resume-btn" class="hero-cta-btn resume-btn-hero">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+              <span>View Resume (PDF)</span>
+            </button>
+            <a href="#other" class="hero-cta-btn glass-btn-hero">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+              <span>Certificates (9)</span>
+            </a>
+            <a href="#projects" class="hero-cta-btn glass-btn-hero">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              <span>Projects</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive AI Chat Terminal Card -->
+        <div class="ai-chat-card glass-card">
+          <div class="chat-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="chat-badge">
+              <span class="ai-sparkle">✦</span>
+              <span>Gowtham's AI Assistant</span>
+            </div>
+          </div>
+
+          <!-- Chat Messages Area -->
+          <div id="chat-messages" class="chat-messages-box">
+            <div class="chat-msg bot-msg">
+              <div class="msg-avatar">NG</div>
+              <div class="msg-bubble">
+                Hello! 👋 I'm Gowtham's AI assistant. Ask me anything about my AI/ML projects like <strong>EduGesture 3D</strong>, my technical skills (Python, React, Computer Vision), education at <strong>MRCE</strong>, or how to get in touch!
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-divider"></div>
+
+          <!-- Chat Quick Chips & Input Form -->
+          <div class="chat-interactive-area">
+            <div class="quick-chips">
+              <button class="chip-btn" data-query="Tell me about your featured projects">🚀 Projects</button>
+              <button class="chip-btn" data-query="What is your educational background?">🎓 Education</button>
+              <button class="chip-btn" data-query="What tech stack and AI tools do you use?">⚡ Skills</button>
+              <button class="chip-btn" data-query="Tell me about your internship and certifications">🏆 Experience</button>
+              <button class="chip-btn" data-query="How can I contact Gowtham?">📬 Contact</button>
+            </div>
+
+            <form id="chat-form" class="chat-input-wrapper">
+              <input type="text" id="chat-input" placeholder="Ask anything about Gowtham's work, AI projects, or background..." autocomplete="off">
+              <button type="submit" id="chat-send-btn" class="send-btn" aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Scroll to Explore Indicator -->
+        <a href="#about" class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT BENTO GRID SECTION -->
+    <section id="about" class="section about-section">
+      <div class="section-container">
+        
+        <div class="bento-grid">
+          
+          <!-- Card 1: 3D Typography Name Card -->
+          <div class="bento-card card-name glass-card">
+            <div class="card-glow-bg"></div>
+            <div class="name-content">
+              <div class="name-letters">
+                <div class="name-row">
+                  <span>N</span><span>U</span><span>N</span><span>A</span><span>V</span><span>A</span><span>T</span><span>H</span>
+                </div>
+                <div class="name-row">
+                  <span>G</span><span>O</span><span>W</span><span>T</span><span>H</span><span>A</span><span>M</span>
+                </div>
+              </div>
+              <div class="name-tag">
+                <div class="tag-line"></div>
+                <span class="tag-text">AI & ML Engineer • Full Stack</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Interactive Stacking Cards (Academics & Experience) -->
+          <div class="bento-card card-stack glass-card">
+            <div class="stack-prompt">
+              <span>HOVER CARDS TO EXPAND</span>
+            </div>
+            <div class="stack-container">
+              <!-- Stack Item 1: Experience -->
+              <div class="stack-card stack-left">
+                <div class="stack-card-glow"></div>
+                <div class="stack-card-header">
+                  <span class="stack-badge">Yuva Intern</span>
+                  <h4 class="stack-title">Mobile & AI Dev</h4>
+                </div>
+                <p class="stack-desc">Junior Mobile App Developer at Yuva Intern. Engineered <strong>Study Buddy AI</strong> with intelligent doubt resolution, custom quiz generation, and student progress tracking.</p>
+              </div>
+
+              <!-- Stack Item 2: University (Center highlight) -->
+              <div class="stack-card stack-center">
+                <div class="stack-card-glow"></div>
+                <div class="stack-card-header">
+                  <span class="stack-badge-primary">B.Tech 2024–2028</span>
+                  <h4 class="stack-title">MRCE Hyderabad</h4>
+                </div>
+                <p class="stack-desc">Pursuing <strong>B.Tech in CSE (AI & ML)</strong> at Malla Reddy College of Engineering. Student Coordinator (TPC) leading tech initiatives and innovation workshops.</p>
+              </div>
+
+              <!-- Stack Item 3: Certifications & Recognition -->
+              <div class="stack-card stack-right">
+                <div class="stack-card-glow"></div>
+                <div class="stack-card-header">
+                  <span class="stack-badge">Credentials</span>
+                  <h4 class="stack-title">ISRO & Microsoft</h4>
+                </div>
+                <p class="stack-desc">Completed <strong>ISRO AI/ML Course</strong>, <strong>Microsoft Generative AI</strong>, <strong>TATA Cybersecurity Simulation</strong>, and Infosys certifications in Web Technologies.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Craft & Tech Stack Marquee -->
+          <div class="bento-card card-craft glass-card">
+            <div class="craft-header">
+              <div>
+                <h3 class="bento-title">Core Craft</h3>
+                <div class="title-accent-bar"></div>
+              </div>
+              <p class="craft-text">Building intelligent <strong>AI/ML systems, Computer Vision solutions, and scalable React web applications</strong>.</p>
+            </div>
+
+            <!-- Infinite Tech Marquee -->
+            <div class="tech-marquee-wrapper">
+              <div class="marquee-fade-left"></div>
+              <div class="marquee-fade-right"></div>
+              <div class="marquee-track">
+                <!-- Group 1 -->
+                <div class="marquee-group">
+                  <span class="tech-pill"><span class="tech-icon">🐍</span> Python</span>
+                  <span class="tech-pill"><span class="tech-icon">👁️</span> MediaPipe</span>
+                  <span class="tech-pill"><span class="tech-icon">⚛️</span> React.js</span>
+                  <span class="tech-pill"><span class="tech-icon">📷</span> OpenCV</span>
+                  <span class="tech-pill"><span class="tech-icon">🌐</span> REST APIs</span>
+                  <span class="tech-pill"><span class="tech-icon">🗄️</span> MySQL</span>
+                  <span class="tech-pill"><span class="tech-icon">🤖</span> AI Tools & LLMs</span>
+                  <span class="tech-pill"><span class="tech-icon">🎨</span> CSS3 / HTML5</span>
+                  <span class="tech-pill"><span class="tech-icon">🐙</span> Git & GitHub</span>
+                </div>
+                <!-- Group 2 (Clone for infinite seamless loop) -->
+                <div class="marquee-group" aria-hidden="true">
+                  <span class="tech-pill"><span class="tech-icon">🐍</span> Python</span>
+                  <span class="tech-pill"><span class="tech-icon">👁️</span> MediaPipe</span>
+                  <span class="tech-pill"><span class="tech-icon">⚛️</span> React.js</span>
+                  <span class="tech-pill"><span class="tech-icon">📷</span> OpenCV</span>
+                  <span class="tech-pill"><span class="tech-icon">🌐</span> REST APIs</span>
+                  <span class="tech-pill"><span class="tech-icon">🗄️</span> MySQL</span>
+                  <span class="tech-pill"><span class="tech-icon">🤖</span> AI Tools & LLMs</span>
+                  <span class="tech-pill"><span class="tech-icon">🎨</span> CSS3 / HTML5</span>
+                  <span class="tech-pill"><span class="tech-icon">🐙</span> Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="craft-footer">
+              <div class="collab-badge">
+                <span class="live-ping"></span>
+                <span>Open to Software & AI/ML Internships / Full-time Roles</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Location / Geo Card -->
+          <div class="bento-card card-location glass-card">
+            <div class="map-bg-wrapper">
+              <div class="map-grid-overlay"></div>
+              <div class="map-radial-light"></div>
+            </div>
+            <div class="location-content">
+              <div class="location-city">
+                <h2>KHAMMAM / HYDERABAD,</h2>
+                <h2>INDIA</h2>
+              </div>
+              <div class="location-details">
+                <span class="geo-coord">17.2473° N, 80.1514° E</span>
+                <span class="geo-tz"><span class="tz-dot">•</span> GMT+5:30 (IST)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Mindset & Hobbies 3D Interactive Card -->
+          <div class="bento-card card-mindset glass-card">
+            <div class="mindset-header">
+              <div>
+                <h3 class="bento-title">Passions & Mindset</h3>
+                <div class="title-accent-bar"></div>
+              </div>
+              <p class="mindset-text">Curiosity and exploration fuel innovative problem-solving and technical leadership.</p>
+            </div>
+
+            <!-- 3D Perspective Card Carousel Display -->
+            <div class="mindset-3d-scene">
+              <div class="mindset-card-item card-left" data-label="Travel">
+                <div class="mindset-img-box img-running">
+                  <div class="mindset-overlay"><span>Exploring Distant Lands</span></div>
+                </div>
+              </div>
+              <div class="mindset-card-item card-center active" data-label="Reading">
+                <div class="mindset-img-box img-calisthenics">
+                  <div class="mindset-overlay"><span>Books & Knowledge</span></div>
+                </div>
+              </div>
+              <div class="mindset-card-item card-right" data-label="Photography">
+                <div class="mindset-img-box img-kickboxing">
+                  <div class="mindset-overlay"><span>Capturing Moments</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mindset-footer">
+              <p><strong>Continuous learning & creative discipline</strong> drive my growth as an engineer.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="section-container">
+        
+        <!-- Section Title Header -->
+        <div class="section-header text-center">
+          <span class="section-badge">Portfolio</span>
+          <h2 class="section-title">Featured <span class="text-gradient-shimmer">Projects</span></h2>
+          <p class="section-subtitle">Real-world AI, Computer Vision, and Full-Stack systems built to solve complex problems.</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 1: EduGesture 3D -->
+          <article class="project-card project-card-interactive" id="edugesture-project-card">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-num">01</span>
+                <span class="meta-divider"></span>
+                <span class="project-type">AI Vision & 3D Interactive</span>
+              </div>
+              <div class="project-title-row">
+                <h3 class="project-name">EduGesture 3D</h3>
+                <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="star-btn" aria-label="View on GitHub" onclick="event.stopPropagation()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project Visual Container (Orange-Yellow Theme) -->
+            <div class="project-canvas theme-orange" id="edugesture-canvas-trigger">
+              <div class="canvas-glow"></div>
+              <p class="project-desc">AI-powered interactive learning platform enabling educators to manipulate 3D models in real-time via natural hand gestures using MediaPipe & Computer Vision (rotation, zoom, translate & reset).</p>
+              
+              <!-- Desktop Frame Mockup with Real Application Photo -->
+              <div class="desktop-mockup-wrapper">
+                <div class="desktop-window">
+                  <div class="window-titlebar">
+                    <span class="btn-circle red"></span>
+                    <span class="btn-circle yellow"></span>
+                    <span class="btn-circle green"></span>
+                    <span class="window-title-text">EduGester — Learn in 3D. Interact with Gestures.</span>
+                  </div>
+                  <div class="window-screen screenshot-screen">
+                    <div class="project-preview-img-box">
+                      <div class="project-preview-overlay">
+                        <span class="preview-badge">✦ Click to Open 3-Step Interactive Walkthrough</span>
+                      </div>
+                      <img src="assets/edugesture/step1_hero.png" alt="EduGester 3D Interactive Platform" class="project-screenshot-main">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Step Thumbnails Mini Gallery -->
+              <div class="project-mini-gallery">
+                <div class="mini-thumb active" title="Step 1: 3D Gesture Classroom">
+                  <img src="assets/edugesture/step1_hero.png" alt="Hero 3D Gesture">
+                  <span>1. 3D Classroom</span>
+                </div>
+                <div class="mini-thumb" title="Step 2: 4-Step Pipeline">
+                  <img src="assets/edugesture/step2_how_it_works.png" alt="How it Works">
+                  <span>2. How It Works</span>
+                </div>
+                <div class="mini-thumb" title="Step 3: Class 1-10 Curriculum">
+                  <img src="assets/edugesture/step3_classes.png" alt="Select Class">
+                  <span>3. Classes 1–10</span>
+                </div>
+              </div>
+
+              <!-- Interactive CTA Trigger -->
+              <div class="project-interactive-footer">
+                <button class="walkthrough-trigger-btn theme-orange" id="open-edugesture-walkthrough-btn">
+                  <span>Explore EduGesture Walkthrough (3 Steps)</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">MediaPipe</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">3D Interaction</span>
+              <span class="tag">Web App</span>
+            </div>
+          </article>
+
+          <!-- Project 2: AI-Based CCTV System -->
+          <article class="project-card project-card-interactive" id="cctv-project-card">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-num">02</span>
+                <span class="meta-divider"></span>
+                <span class="project-type">Computer Vision & Smart Surveillance</span>
+              </div>
+              <div class="project-title-row">
+                <h3 class="project-name">AI-Based CCTV System</h3>
+                <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="star-btn" aria-label="View on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project Visual Container (Modern Emerald Cyber Theme) -->
+            <div class="project-canvas theme-green cctv-card-canvas" id="cctv-canvas-trigger" style="cursor: pointer;" title="Click to view live screenshots and step-by-step process">
+              <div class="canvas-glow"></div>
+              
+              <div class="canvas-header-badge-row">
+                <span class="live-status-pill"><span class="pulse-dot green"></span> YOLOv8x Inference Engine</span>
+                <span class="tech-metric-pill">60 FPS Real-Time</span>
+              </div>
+
+              <p class="project-desc">
+                Intelligent surveillance analytics using <strong>YOLOv8 & Computer Vision</strong> for automated crowd density mapping, multi-target tracking, and automated security alerts.
+              </p>
+              
+              <!-- Professional Desktop Frame Mockup with Real AI Feed -->
+              <div class="desktop-mockup-wrapper">
+                <div class="desktop-window cctv-window-pro">
+                  <div class="window-titlebar">
+                    <span class="btn-circle red"></span>
+                    <span class="btn-circle yellow"></span>
+                    <span class="btn-circle green"></span>
+                    <span class="window-title-text">YOLOv8 Core — Cam_04 Feeds (Dense Crowd Tracking)</span>
+                    <span class="rec-badge"><span class="rec-dot"></span> LIVE REC</span>
+                  </div>
+                  <div class="window-screen cctv-screen-pro">
+                    <img src="assets/cctv/step4_video_detection.png" alt="YOLOv8 Live Video Detection Feed" class="cctv-feed-img-preview">
+                    
+                    <!-- Scanline Laser Effect -->
+                    <div class="cctv-scan-line"></div>
+                    
+                    <!-- Real-Time Telemetry HUD -->
+                    <div class="cctv-hud-bar">
+                      <div class="hud-stat"><span class="hud-label">HEADCOUNT:</span> <span class="hud-val green">48</span></div>
+                      <div class="hud-stat"><span class="hud-label">DENSITY:</span> <span class="hud-val yellow">HIGH</span></div>
+                      <div class="hud-stat"><span class="hud-label">STATUS:</span> <span class="hud-val green">NORMAL</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clickable overlay badge -->
+              <div class="canvas-interactive-overlay">
+                <span class="interactive-pill pro-pill">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                  Click to View Step-by-Step AI Demo & Screenshots (5 Steps)
+                </span>
+              </div>
+            </div>
+
+            <!-- Interactive Walkthrough CTA Button -->
+            <div class="project-action-row">
+              <button type="button" class="project-walkthrough-btn" id="open-cctv-walkthrough-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>Explore Step-by-Step Process (YOLOv8 Demo)</span>
+                <span class="step-count-pill">5 Steps</span>
+              </button>
+            </div>
+
+            <!-- Tags -->
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">YOLOv8</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Crowd Analytics</span>
+              <span class="tag">Surveillance AI</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Study Buddy AI -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-num">03</span>
+                <span class="meta-divider"></span>
+                <span class="project-type">Generative AI Mobile & Web App</span>
+              </div>
+              <div class="project-title-row">
+                <h3 class="project-name">Study Buddy AI</h3>
+                <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="star-btn" aria-label="View on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project Visual Container (Purple-Pink Theme) -->
+            <div class="project-canvas theme-purple">
+              <div class="canvas-glow"></div>
+              <p class="project-desc">AI-powered virtual study assistant providing instant doubt resolution, tailored personalized study curricula, automated quiz generation, and smart notes summarization.</p>
+              
+              <!-- Layered Phone Mockups -->
+              <div class="phones-mockup-wrapper">
+                <div class="phone-mockup phone-sub phone-left">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-habits">
+                    <div class="mock-header">Study Plan</div>
+                    <div class="mock-item done">✓ Machine Learning Ch.3</div>
+                    <div class="mock-item done">✓ Computer Vision Quiz</div>
+                    <div class="mock-item">○ Python Practice</div>
+                  </div>
+                </div>
+
+                <div class="phone-mockup phone-main">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-tree">
+                    <div class="mock-tree-node node-master">🤖 AI Assistant</div>
+                    <div class="mock-branch"></div>
+                    <div class="mock-nodes-row">
+                      <div class="mock-node active">Quiz</div>
+                      <div class="mock-node active">Doubt</div>
+                      <div class="mock-node">Notes</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="phone-mockup phone-sub phone-right">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-stats">
+                    <div class="mock-header">Accuracy</div>
+                    <div class="mock-stat-bar" style="width: 92%;"></div>
+                    <div class="mock-stat-bar" style="width: 88%;"></div>
+                    <div class="mock-stat-bar" style="width: 96%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="project-tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">GenAI & LLMs</span>
+              <span class="tag">REST API</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </article>
+
+          <!-- Project 4: InterviewAI & College Chatbot -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-num">04</span>
+                <span class="meta-divider"></span>
+                <span class="project-type">NLP & Conversational AI</span>
+              </div>
+              <div class="project-title-row">
+                <h3 class="project-name">InterviewAI & Virtual Assistant</h3>
+                <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="star-btn" aria-label="View on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project Visual Container (Blue-Cyan Theme) -->
+            <div class="project-canvas theme-blue">
+              <div class="canvas-glow"></div>
+              <p class="project-desc">Intelligent mock interview preparation platform with voice-controlled speech interaction, answer scoring, College Chatbot, and hands-free task automation.</p>
+              
+              <!-- Layered Phone Mockups -->
+              <div class="phones-mockup-wrapper">
+                <div class="phone-mockup phone-sub phone-left">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-lobby">
+                    <div class="mock-header">InterviewAI</div>
+                    <div class="mock-player">🎙️ Voice Mode</div>
+                    <div class="mock-player">✓ Audio Ready</div>
+                  </div>
+                </div>
+
+                <div class="phone-mockup phone-main">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-board">
+                    <div class="mock-card-grid">
+                      <div class="m-card up">⚡ DSA</div>
+                      <div class="m-card up">🧠 ML</div>
+                      <div class="m-card up">💻 React</div>
+                      <div class="m-card up">🐍 Python</div>
+                      <div class="m-card up">📊 SQL</div>
+                      <div class="m-card up">🎯 HR</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="phone-mockup phone-sub phone-right">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen screen-chat">
+                    <div class="mock-header">AI Evaluation</div>
+                    <div class="mock-bubble right">Explain CNNs?</div>
+                    <div class="mock-bubble left">Score: 9.5/10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Speech Recognition</span>
+              <span class="tag">React.js</span>
+              <span class="tag">AI Evaluation</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- GitHub Repositories Link CTA -->
+        <div class="github-cta-wrapper text-center">
+          <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="github-cta-link">
+            <span>Explore all repositories & code on GitHub</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. TECH STACK & SKILLS MATRIX SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="section-badge">Technical Arsenal</span>
+          <h2 class="section-title">My <span class="text-gradient-shimmer">Skills</span></h2>
+          <p class="section-subtitle">Programming languages, AI/ML libraries, frontend frameworks, and developer toolsets from my toolkit.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="skills-filter-tabs">
+          <button class="skill-tab active" data-category="all">All Skills</button>
+          <button class="skill-tab" data-category="ai">AI & Computer Vision</button>
+          <button class="skill-tab" data-category="frontend">Frontend & Web</button>
+          <button class="skill-tab" data-category="backend">Backend & DB</button>
+          <button class="skill-tab" data-category="tools">Tools & Productivity</button>
+        </div>
+
+        <!-- Skills Cards Matrix -->
+        <div class="skills-matrix">
+          
+          <div class="skill-card glass-card" data-cat="ai">
+            <div class="skill-icon-box">🐍</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Python</h4>
+              <p class="skill-desc">Core AI algorithms, computer vision pipelines, automation & scripting</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 95%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="ai">
+            <div class="skill-icon-box">👁️</div>
+            <div class="skill-info">
+              <h4 class="skill-name">MediaPipe & OpenCV</h4>
+              <p class="skill-desc">Real-time hand gesture tracking, 3D landmark detection & video analysis</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="ai">
+            <div class="skill-icon-box">🤖</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Generative AI & LLMs</h4>
+              <p class="skill-desc">Prompt engineering, AI study agents, NLP chatbots & evaluation systems</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="frontend">
+            <div class="skill-icon-box">⚛️</div>
+            <div class="skill-info">
+              <h4 class="skill-name">React.js</h4>
+              <p class="skill-desc">Component-driven reactive UIs, state hooks, responsive single-page apps</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="frontend">
+            <div class="skill-icon-box">🌐</div>
+            <div class="skill-info">
+              <h4 class="skill-name">HTML5 & CSS3</h4>
+              <p class="skill-desc">Semantic modern web structure, Flexbox, CSS Grid & glassmorphism styling</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 96%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="frontend">
+            <div class="skill-icon-box">⚡</div>
+            <div class="skill-info">
+              <h4 class="skill-name">JavaScript (ES6+)</h4>
+              <p class="skill-desc">DOM manipulation, async/await, API integration & interactive mechanics</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 89%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="backend">
+            <div class="skill-icon-box">🔗</div>
+            <div class="skill-info">
+              <h4 class="skill-name">REST APIs</h4>
+              <p class="skill-desc">API design, client-server integration, JSON payload processing & endpoints</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="backend">
+            <div class="skill-icon-box">🗄️</div>
+            <div class="skill-info">
+              <h4 class="skill-name">MySQL Database</h4>
+              <p class="skill-desc">Relational schema design, querying, data normalization & CRUD operations</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 86%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="tools">
+            <div class="skill-icon-box">🐙</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Git & GitHub</h4>
+              <p class="skill-desc">Version control, repository maintenance, branching & open-source collaboration</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="tools">
+            <div class="skill-icon-box">📊</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Microsoft Office Suite</h4>
+              <p class="skill-desc">Excel data analysis, Word technical documentation & PowerPoint presentations</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 94%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="tools">
+            <div class="skill-icon-box">🛡️</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Cybersecurity Foundations</h4>
+              <p class="skill-desc">Vulnerability analysis, IAM concepts & security simulation (TATA / Forage)</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 84%;"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-cat="ai">
+            <div class="skill-icon-box">🎙️</div>
+            <div class="skill-info">
+              <h4 class="skill-name">Voice & Speech AI</h4>
+              <p class="skill-desc">Hands-free voice recognition, conversational assistants & task automation</p>
+              <div class="skill-bar"><div class="bar-fill" style="width: 87%;"></div></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. CERTIFICATES & RECOGNITION SECTION -->
+    <section id="other" class="section other-section">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="section-badge">Verified Credentials</span>
+          <h2 class="section-title">Certificates & <span class="text-gradient-shimmer">Industry Milestones</span></h2>
+          <p class="section-subtitle">Official verified industry credentials, virtual internships, and professional course completions. Click any certificate to inspect full details or view the PDF.</p>
+        </div>
+
+        <!-- Featured Resume Spotlight Banner -->
+        <div class="resume-spotlight-card glass-card">
+          <div class="resume-spotlight-left">
+            <div class="resume-icon-badge">📄</div>
+            <div class="resume-spotlight-info">
+              <div class="resume-badge-row">
+                <span class="resume-pill">Curriculum Vitae</span>
+                <span class="resume-status-dot">● Updated 2026</span>
+              </div>
+              <h3 class="resume-spotlight-title">Nunavath Gowtham — Official Resume</h3>
+              <p class="resume-spotlight-desc">B.Tech CSE (AI & ML) at MRCE • Computer Vision & Full Stack Developer • Open for SDE / AI Engineer Roles & Internships.</p>
+            </div>
+          </div>
+          <div class="resume-spotlight-actions">
+            <button id="banner-view-resume-btn" class="resume-action-btn primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Preview Resume</span>
+            </button>
+            <a href="assets/docs/Gowtham_Resume.pdf" target="_blank" download="Nunavath_Gowtham_Resume.pdf" class="resume-action-btn secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span>Download PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Category Filter Tabs -->
+        <div class="cert-filter-wrapper">
+          <div class="cert-filter-pills" id="cert-filter-nav">
+            <button class="cert-filter-btn active" data-filter="all">All Certificates <span class="filter-count">9</span></button>
+            <button class="cert-filter-btn" data-filter="ai-ml">AI & Machine Learning <span class="filter-count">4</span></button>
+            <button class="cert-filter-btn" data-filter="web-dev">Web Technologies <span class="filter-count">3</span></button>
+            <button class="cert-filter-btn" data-filter="internship">Internships & Simulations <span class="filter-count">2</span></button>
+          </div>
+        </div>
+
+        <!-- Dynamic Certificates Showcase Grid (Populated dynamically and statically accessible) -->
+        <div class="certificates-grid" id="certificates-container">
+          <!-- Populated by JavaScript with full rich interactivity -->
+        </div>
+
+        <!-- Secondary Explore Row: Guestbook & Contact Links -->
+        <div class="explore-grid" style="margin-top: 48px;">
+          
+          <!-- Card 1: Verified Timeline Overview -->
+          <div class="explore-card glass-card" id="open-achievements-btn">
+            <div class="explore-card-glow theme-amber"></div>
+            <div class="explore-icon-wrapper theme-amber">
+              <div class="explore-icon-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>
+              </div>
+            </div>
+            <div class="explore-text-box">
+              <h3 class="explore-heading theme-amber">Milestones Timeline</h3>
+              <p class="explore-desc">Chronological view of certifications, internship milestones & credentials.</p>
+            </div>
+            <div class="explore-cta-link theme-amber">
+              <span>View Milestones Roadmap →</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Interactive Guestbook -->
+          <div class="explore-card glass-card" id="open-guestbook-btn">
+            <div class="explore-card-glow theme-violet"></div>
+            <div class="explore-icon-wrapper theme-violet">
+              <div class="explore-icon-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+              </div>
+            </div>
+            <div class="explore-text-box">
+              <h3 class="explore-heading theme-violet">Guestbook</h3>
+              <p class="explore-desc">Leave a note, peer endorsement, or say hello to Gowtham.</p>
+            </div>
+            <div class="explore-cta-link theme-violet">
+              <span>Sign Guestbook →</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Social & My Links -->
+          <div class="explore-card glass-card" id="open-links-btn">
+            <div class="explore-card-glow theme-cyan"></div>
+            <div class="explore-icon-wrapper theme-cyan">
+              <div class="explore-icon-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+              </div>
+            </div>
+            <div class="explore-text-box">
+              <h3 class="explore-heading theme-cyan">Connect & Channels</h3>
+              <p class="explore-desc">Direct email, LinkedIn, GitHub, phone, and resume access.</p>
+            </div>
+            <div class="explore-cta-link theme-cyan">
+              <span>Get in Touch →</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Interactive Terminal Easter Egg Box -->
+      <div class="easter-egg-card glass-card">
+        <div class="egg-header">
+          <span class="terminal-tag">GOWTHAM'S DEV TERMINAL</span>
+          <span id="secret-status" class="status-msg">● System Ready — Type 'help', 'resume', or 'certificates'</span>
+        </div>
+        <div class="egg-input-row">
+          <span class="cmd-prompt">&gt;</span>
+          <input type="text" id="terminal-cmd" placeholder="Try 'resume', 'certificates', 'projects', or 'contact'..." autocomplete="off">
+          <button id="run-cmd-btn" class="run-btn">Execute</button>
+        </div>
+        <div id="terminal-output" class="terminal-output hidden"></div>
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom-row">
+        <div class="footer-brand">
+          <span class="brand-monogram">NG</span>
+          <span class="sep">•</span>
+          <span>© 2026 Nunavath Gowtham. Engineered with passion & AI.</span>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-socials">
+          <a href="assets/docs/Gowtham_Resume.pdf" target="_blank" class="social-icon-btn" aria-label="Resume PDF" title="Open Resume PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+          </a>
+          <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/gowtham711/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:gowthamnunavath93@gmail.com" class="social-icon-btn" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </a>
+          <a href="tel:+917671984469" class="social-icon-btn" aria-label="Phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Modal 1: Connect / Book Call Modal -->
+  <div id="modal-book-call" class="modal-backdrop">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📬</div>
+          <div>
+            <h3 class="modal-title">Connect with Gowtham</h3>
+            <p class="modal-subtitle">Discuss AI projects, internships, or collaboration opportunities</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-book-call">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Direct Quick Reach -->
+        <div class="quick-contact-pill-row">
+          <a href="mailto:gowthamnunavath93@gmail.com" class="contact-pill-link">
+            📧 gowthamnunavath93@gmail.com
+          </a>
+          <a href="tel:+917671984469" class="contact-pill-link">
+            📞 +91-7671984469
+          </a>
+        </div>
+
+        <!-- Date Picker Selector -->
+        <div class="form-group">
+          <label class="form-label">Preferred Discussion Day</label>
+          <div class="date-chips">
+            <button class="date-chip active" data-date="Today/Tomorrow">Today / Tomorrow</button>
+            <button class="date-chip" data-date="This Week">This Week</button>
+            <button class="date-chip" data-date="Next Week">Next Week</button>
+            <button class="date-chip" data-date="Weekend">Weekend</button>
+          </div>
+        </div>
+
+        <!-- Time Slots -->
+        <div class="form-group">
+          <label class="form-label">Preferred Time (IST / GMT+5:30)</label>
+          <div class="time-slots">
+            <button class="time-slot active">10:00 AM</button>
+            <button class="time-slot">02:00 PM</button>
+            <button class="time-slot">05:30 PM</button>
+            <button class="time-slot">08:00 PM</button>
+          </div>
+        </div>
+
+        <!-- User Information Form -->
+        <form id="book-form" class="book-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" id="book-name" placeholder="John / Recruiter" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Email</label>
+              <input type="email" id="book-email" placeholder="name@company.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message / Role Opportunity</label>
+            <textarea id="book-topic" rows="2" placeholder="Tell Gowtham about the role, project, or topic..."></textarea>
+          </div>
+          <button type="submit" class="modal-submit-btn">
+            <span>Send Message / Connect</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Interactive Guestbook Modal -->
+  <div id="modal-guestbook" class="modal-backdrop">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📖</div>
+          <div>
+            <h3 class="modal-title">Community Guestbook</h3>
+            <p class="modal-subtitle">Leave feedback or an endorsement for Nunavath Gowtham</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-guestbook">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="guestbook-form" class="guestbook-form">
+          <div class="form-row">
+            <input type="text" id="gb-name" placeholder="Your Name" required>
+            <input type="text" id="gb-handle" placeholder="@github or Company (optional)">
+          </div>
+          <textarea id="gb-message" rows="2" placeholder="Write something inspiring about Gowtham's work..." required></textarea>
+          <button type="submit" class="modal-submit-btn">Post Entry ✨</button>
+        </form>
+
+        <div class="guestbook-entries-header">Recent Messages</div>
+        <div id="guestbook-entries" class="guestbook-entries-list">
+          <!-- Populated by script.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Certificates & Achievements Timeline Modal -->
+  <div id="modal-achievements" class="modal-backdrop">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">🏆</div>
+          <div>
+            <h3 class="modal-title">Certifications & Milestones Timeline</h3>
+            <p class="modal-subtitle">Verified professional courses and academic recognition</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-achievements">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="achievements-timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-dot emerald"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">08/2026</span>
+              <h4 class="timeline-title">💼 Junior Mobile App Developer Internship — YuvaIntern</h4>
+              <p class="timeline-desc">Virtual internship completed in Coimbatore. Developed <strong>Study Buddy AI</strong> (AI doubt solver, smart study planner, and quiz generator).</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot gold"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">07/2026</span>
+              <h4 class="timeline-title">🛡️ Cybersecurity Analyst Job Simulation — TATA & Forage</h4>
+              <p class="timeline-desc">Completed simulated industry cybersecurity assessment: risk evaluation, vulnerability analysis, Identity & Access Management (IAM), and security best practices.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot purple"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">07/2026</span>
+              <h4 class="timeline-title">🤖 Career Essentials in Generative AI — Microsoft & LinkedIn Learning</h4>
+              <p class="timeline-desc">Mastered core principles of Generative AI, Large Language Models, prompt crafting, and responsible AI implementation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot bronze"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">09/2026</span>
+              <h4 class="timeline-title">🛰️ AI/ML for Geodata Analytics — ISRO & IIRS</h4>
+              <p class="timeline-desc">Completed 10-hour specialized program in remote sensing AI, satellite image analytics, and geospatial machine learning from IIRS / ISRO, Department of Space.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot gold"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">01/2026 – 02/2026</span>
+              <h4 class="timeline-title">🌐 Infosys Certified: HTML5, JavaScript & CSS3</h4>
+              <p class="timeline-desc">Comprehensive certification covering modern responsive web architectures, asynchronous JavaScript, and CSS3 layouts.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot purple"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">01/2026</span>
+              <h4 class="timeline-title">💡 SOAR-AI Skill India (NSQF Level 6) & IBM AI</h4>
+              <p class="timeline-desc">Certified in foundational AI systems, machine learning pipelines, and AI enablement for modern education by NASSCOM & IBM.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Links & Connect Modal -->
+  <div id="modal-links" class="modal-backdrop">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">🔗</div>
+          <div>
+            <h3 class="modal-title">Connect with Nunavath Gowtham</h3>
+            <p class="modal-subtitle">Direct channels to reach out, hire, or collaborate</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-links">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="links-list">
+          <a href="assets/docs/Gowtham_Resume.pdf" target="_blank" class="link-item resume-highlight-link">
+            <div class="link-item-left">
+              <span class="link-icon">📄</span>
+              <div>
+                <strong>Official Resume (PDF)</strong>
+                <p>Download / View Gowtham's Full CV</p>
+              </div>
+            </div>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a href="mailto:gowthamnunavath93@gmail.com" class="link-item">
+            <div class="link-item-left">
+              <span class="link-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>gowthamnunavath93@gmail.com</p>
+              </div>
+            </div>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a href="tel:+917671984469" class="link-item">
+            <div class="link-item-left">
+              <span class="link-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+91-7671984469 (Khammam / Hyderabad)</p>
+              </div>
+            </div>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Gowtham711" target="_blank" rel="noopener noreferrer" class="link-item">
+            <div class="link-item-left">
+              <span class="link-icon">🐙</span>
+              <div>
+                <strong>GitHub</strong>
+                <p>github.com/Gowtham711</p>
+              </div>
+            </div>
+            <span class="link-arrow">↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/gowtham711/" target="_blank" rel="noopener noreferrer" class="link-item">
+            <div class="link-item-left">
+              <span class="link-icon">💼</span>
+              <div>
+                <strong>LinkedIn</strong>
+                <p>linkedin.com/in/gowtham711</p>
+              </div>
+            </div>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Interactive Certificate Details & PDF Viewer Modal -->
+  <div id="modal-cert-viewer" class="modal-backdrop cert-viewer-backdrop">
+    <div class="modal-box cert-viewer-box glass-card">
+      <div class="modal-header cert-viewer-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge" id="cert-viewer-icon">🏆</div>
+          <div>
+            <div class="cert-modal-tag-row">
+              <span class="cert-modal-tag" id="cert-viewer-badge">Verified Credential</span>
+              <span class="cert-modal-issuer" id="cert-viewer-issuer-tag">YuvaIntern</span>
+            </div>
+            <h3 class="modal-title" id="cert-viewer-title">Certificate Title</h3>
+          </div>
+        </div>
+        <div class="cert-header-actions">
+          <a href="#" id="cert-viewer-newtab-btn" target="_blank" class="cert-header-btn" title="Open PDF in New Window">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            <span>Open PDF ↗</span>
+          </a>
+          <a href="#" id="cert-viewer-download-btn" download class="cert-header-btn download" title="Download PDF File">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+          <button class="modal-close-btn" data-close="modal-cert-viewer" aria-label="Close certificate modal">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body cert-viewer-body">
+        <div class="cert-viewer-split-layout">
+          
+          <!-- Left: Live Embedded PDF Viewer -->
+          <div class="cert-pdf-column">
+            <div class="cert-pdf-wrapper">
+              <div class="cert-pdf-loading-overlay" id="cert-pdf-loading">
+                <span class="cert-spinner"></span>
+                <span>Rendering Certificate PDF...</span>
+              </div>
+              <iframe id="cert-pdf-iframe" class="cert-pdf-iframe" src="" title="Certificate Preview PDF"></iframe>
+            </div>
+            <div class="cert-pdf-bottom-bar">
+              <span class="pdf-file-label" id="cert-pdf-filename">document.pdf</span>
+              <a href="#" id="cert-pdf-direct-link" target="_blank" class="cert-fallback-link">Having trouble viewing? Click to open full PDF ↗</a>
+            </div>
+          </div>
+
+          <!-- Right: Comprehensive Verified Information Panel -->
+          <div class="cert-info-column">
+            
+            <div class="cert-info-section">
+              <h4 class="cert-info-heading">📜 Credential Metadata</h4>
+              <div class="cert-meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label">Issuing Body</span>
+                  <strong class="meta-value" id="cert-info-issuer">YuvaIntern</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Date of Issue</span>
+                  <strong class="meta-value" id="cert-info-date">August 16, 2026</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Credential ID</span>
+                  <strong class="meta-value mono-val" id="cert-info-id">YI/2026/84421/250345</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Verification Status</span>
+                  <strong class="meta-value status-verified" id="cert-info-status">
+                    <span class="verified-dot">✓</span> Verified Authentic
+                  </strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="cert-info-section">
+              <h4 class="cert-info-heading">💡 Overview & Assessment</h4>
+              <p class="cert-info-text" id="cert-info-desc">Detailed certificate description.</p>
+              <div class="cert-project-box" id="cert-project-box">
+                <div class="proj-box-title">🚀 Project / Curriculum Focus</div>
+                <p class="proj-box-desc" id="cert-info-project">Study Buddy AI virtual assistant.</p>
+              </div>
+            </div>
+
+            <div class="cert-info-section">
+              <h4 class="cert-info-heading">🎯 Competencies & Skills Earned</h4>
+              <div class="cert-skills-wrap" id="cert-info-skills">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <div class="cert-info-section cert-authority-section">
+              <div class="authority-inner">
+                <span class="authority-icon">✍️</span>
+                <div>
+                  <span class="meta-label">Authorized Signatory</span>
+                  <div class="authority-name" id="cert-info-signatory">Kounal Gupta, Founder YuvaIntern</div>
+                </div>
+              </div>
+              <div id="cert-verify-link-container" class="cert-verify-box hidden">
+                <a href="#" id="cert-verify-url" target="_blank" rel="noopener noreferrer" class="verify-external-btn">
+                  <span>Verify at Issuer Portal ↗</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Interactive Resume Viewer Modal -->
+  <div id="modal-resume" class="modal-backdrop resume-modal-backdrop">
+    <div class="modal-box resume-modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📄</div>
+          <div>
+            <div class="cert-modal-tag-row">
+              <span class="resume-pill">Curriculum Vitae</span>
+              <span class="cert-modal-issuer">Nunavath Gowtham</span>
+            </div>
+            <h3 class="modal-title">Nunavath Gowtham — Official Resume</h3>
+          </div>
+        </div>
+        <div class="cert-header-actions">
+          <a href="assets/docs/Gowtham_Resume.pdf" target="_blank" class="cert-header-btn" title="Open in New Tab">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            <span>Open PDF ↗</span>
+          </a>
+          <a href="assets/docs/Gowtham_Resume.pdf" download="Nunavath_Gowtham_Resume.pdf" class="cert-header-btn download" title="Download Resume PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span>Download CV</span>
+          </a>
+          <button class="modal-close-btn" data-close="modal-resume" aria-label="Close resume modal">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body resume-modal-body">
+        <div class="resume-split-layout">
+          
+          <!-- Embedded PDF Viewer -->
+          <div class="resume-pdf-container">
+            <iframe id="resume-frame" class="resume-pdf-iframe" src="assets/docs/Gowtham_Resume.pdf" title="Nunavath Gowtham Resume Preview"></iframe>
+          </div>
+
+          <!-- Quick Career Highlights Sidebar -->
+          <div class="resume-summary-sidebar">
+            <div class="sidebar-card">
+              <h4 class="sidebar-heading">🎓 Education</h4>
+              <div class="sidebar-item">
+                <strong>B.Tech, CSE (AI & ML) [2024–2028]</strong>
+                <p>Malla Reddy College of Engineering (MRCE), Medchal, Telangana</p>
+              </div>
+              <div class="sidebar-item">
+                <strong>Intermediate (MPC) [2022–2024]</strong>
+                <p>TTWRJC COE KSD-SITE, Kothagudem</p>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h4 class="sidebar-heading">💼 Experience</h4>
+              <div class="sidebar-item">
+                <strong>Junior Mobile App Developer (Virtual)</strong>
+                <p>Yuva Intern (06/2026 – 07/2026) • Study Buddy AI</p>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h4 class="sidebar-heading">🚀 Key Projects</h4>
+              <ul class="sidebar-list">
+                <li>• <strong>EduGesture 3D</strong> (MediaPipe & CV 3D Learning Platform)</li>
+                <li>• <strong>AI-Based CCTV System</strong> (Crowd & Crime Prevention Analytics)</li>
+                <li>• <strong>Study Buddy AI</strong> (Intelligent Virtual Tutor)</li>
+                <li>• <strong>InterviewAI</strong> (Mock Interview Voice System)</li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h4 class="sidebar-heading">⚡ Core Toolkit</h4>
+              <div class="sidebar-tags">
+                <span>Python</span>
+                <span>React.js</span>
+                <span>MediaPipe</span>
+                <span>OpenCV</span>
+                <span>REST API</span>
+                <span>MySQL</span>
+                <span>HTML5 / CSS3</span>
+                <span>GenAI Tools</span>
+              </div>
+            </div>
+
+            <div class="sidebar-cta-box">
+              <button id="resume-hire-btn" class="sidebar-hire-btn">
+                <span>Contact / Hire Gowtham</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: EduGesture 3D System Walkthrough Modal -->
+  <div id="modal-edugesture-walkthrough" class="modal-backdrop modal-cctv-backdrop">
+    <div class="modal-box modal-cctv-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge theme-orange">✋</div>
+          <div>
+            <h3 class="modal-title">EduGesture 3D (EduGester) — Step-by-Step Architecture</h3>
+            <p class="modal-subtitle">Interactive 3D Learning Platform with Real-Time MediaPipe Hand Gesture Recognition & Computer Vision</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-edugesture-walkthrough" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body edugesture-modal-body">
+        
+        <!-- Step Navigation Bar (Pills) -->
+        <div class="cctv-step-nav" id="edugesture-step-nav">
+          <button class="edugesture-step-tab active" data-step="1">
+            <span class="step-num">1</span>
+            <span class="step-label">Learn in 3D & Gestures</span>
+          </button>
+          <button class="edugesture-step-tab" data-step="2">
+            <span class="step-num">2</span>
+            <span class="step-label">4-Step Workflow</span>
+          </button>
+          <button class="edugesture-step-tab" data-step="3">
+            <span class="step-num">3</span>
+            <span class="step-label">Class 1–10 Curriculum</span>
+          </button>
+        </div>
+
+        <!-- Main Slide Display Area -->
+        <div class="cctv-slide-container">
+          
+          <!-- Slide 1 -->
+          <div class="edugesture-slide active" data-slide="1">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper" style="border-color: rgba(249, 115, 22, 0.4);">
+                <div class="cctv-img-overlay-badge" style="color: #fb923c; border-color: rgba(249, 115, 22, 0.5);">Step 1 • Live 3D Gesture Classroom Platform</div>
+                <img src="assets/edugesture/step1_hero.png" alt="EduGester 3D Gesture Platform" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag" style="color: #fb923c; background: rgba(249, 115, 22, 0.1);">Phase 01: Vision & Immersion</div>
+                <h4 class="cctv-step-heading">Real-Time Hand Gesture Control & 3D Simulation</h4>
+                <p class="cctv-step-text">
+                  EduGesture 3D combines <strong>Google MediaPipe</strong> hand landmark detection with <strong>Three.js / WebGL</strong>. Teachers and students can intuitively manipulate complex 3D models (such as planetary orbits, human anatomy, and molecular structures) in real time with 60 FPS latency using standard webcams.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">🖐️</span> <div><strong>21-Point Hand Landmark Detection</strong>: Tracks finger joints, pinch gestures, and palm vectors for natural, touchless 3D interaction.</div></div>
+                  <div class="point-item"><span class="point-icon">🪐</span> <div><strong>Spatial 3D Model Control</strong>: Supports 360° rotation, dynamic zoom, translation, and reset without expensive VR gear.</div></div>
+                  <div class="point-item"><span class="point-icon">⚡</span> <div><strong>Edge Inference</strong>: Runs client-side for smooth performance across school desktops and laptops.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="edugesture-slide" data-slide="2">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper" style="border-color: rgba(249, 115, 22, 0.4);">
+                <div class="cctv-img-overlay-badge" style="color: #fb923c; border-color: rgba(249, 115, 22, 0.5);">Step 2 • 4-Step Interactive Pipeline</div>
+                <img src="assets/edugesture/step2_how_it_works.png" alt="EduGester How It Works Pipeline" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag" style="color: #fb923c; background: rgba(249, 115, 22, 0.1);">Phase 02: Pipeline Architecture</div>
+                <h4 class="cctv-step-heading">Intuitive 4-Step Pedagogy Workflow</h4>
+                <p class="cctv-step-text">
+                  The platform provides an end-to-end interactive classroom workflow. Teachers launch a digital room with instant class codes, activate the gesture engine, and allow students to explore interactive 3D science content with real-time feedback.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">👥</span> <div><strong>1. Create / Join Class</strong>: Instant class creation and student onboarding with unique session room codes.</div></div>
+                  <div class="point-item"><span class="point-icon">📹</span> <div><strong>2. Gesture Detection</strong>: High-accuracy AI camera stream tracking hand coordinates at 60 FPS.</div></div>
+                  <div class="point-item"><span class="point-icon">📦</span> <div><strong>3. Interact in 3D & 4. Learn & Grow</strong>: Direct tactile-like control over educational assets and student progress metrics.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="edugesture-slide" data-slide="3">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper" style="border-color: rgba(249, 115, 22, 0.4);">
+                <div class="cctv-img-overlay-badge" style="color: #fb923c; border-color: rgba(249, 115, 22, 0.5);">Step 3 • Class 1–10 Multi-Grade Curriculum Suite</div>
+                <img src="assets/edugesture/step3_classes.png" alt="EduGester Class 1 to 10 Curriculum" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag" style="color: #fb923c; background: rgba(249, 115, 22, 0.1);">Phase 03: Curriculum Suite</div>
+                <h4 class="cctv-step-heading">Comprehensive Class 1 to 10 Interactive STEM Suite</h4>
+                <p class="cctv-step-text">
+                  Tailored grade-level learning modules spanning elementary school foundations up to Class 10 board examinations, bringing abstract textbook concepts into tangible 3D interactive reality.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">🌱</span> <div><strong>Elementary (Classes 1–5)</strong>: Visual science, environment, plant biology, space exploration, and human body systems.</div></div>
+                  <div class="point-item"><span class="point-icon">🔬</span> <div><strong>Middle School (Classes 6–8)</strong>: Geometry, chemical apparatus, optics, cellular biology, and solar system mechanics.</div></div>
+                  <div class="point-item"><span class="point-icon">⚛️</span> <div><strong>High School (Classes 9–10)</strong>: Atomic models, genetics, life processes, motion physics, and quantum optics.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slide Footer Controls -->
+        <div class="cctv-controls-footer">
+          <button id="edugesture-prev-btn" class="cctv-nav-btn" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Previous Step</span>
+          </button>
+
+          <div class="cctv-step-counter">
+            Step <span id="edugesture-current-step-num">1</span> of <span>3</span>
+          </div>
+
+          <button id="edugesture-next-btn" class="cctv-nav-btn primary" style="background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);">
+            <span>Next Step</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: AI-Based CCTV System Walkthrough Modal -->
+  <div id="modal-cctv-walkthrough" class="modal-backdrop modal-cctv-backdrop">
+    <div class="modal-box modal-cctv-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge theme-emerald">🛡️</div>
+          <div>
+            <h3 class="modal-title">AI-Based CCTV System — Step-by-Step Architecture</h3>
+            <p class="modal-subtitle">Using Existing CCTV Network for Crowd Management, Crime Prevention & Work Monitoring using AI & ML (YOLOv8)</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" data-close="modal-cctv-walkthrough" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body cctv-modal-body">
+        
+        <!-- Step Navigation Bar (Pills) -->
+        <div class="cctv-step-nav" id="cctv-step-nav">
+          <button class="cctv-step-tab active" data-step="1">
+            <span class="step-num">1</span>
+            <span class="step-label">Dashboard & Model</span>
+          </button>
+          <button class="cctv-step-tab" data-step="2">
+            <span class="step-num">2</span>
+            <span class="step-label">Load Video</span>
+          </button>
+          <button class="cctv-step-tab" data-step="3">
+            <span class="step-num">3</span>
+            <span class="step-label">Load Image</span>
+          </button>
+          <button class="cctv-step-tab" data-step="4">
+            <span class="step-num">4</span>
+            <span class="step-label">Video Detection</span>
+          </button>
+          <button class="cctv-step-tab" data-step="5">
+            <span class="step-num">5</span>
+            <span class="step-label">Image Counting</span>
+          </button>
+        </div>
+
+        <!-- Main Slide Display Area -->
+        <div class="cctv-slide-container">
+          
+          <!-- Slide 1 -->
+          <div class="cctv-slide active" data-slide="1">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper">
+                <div class="cctv-img-overlay-badge">Step 1 • Main GUI & Model Initialization</div>
+                <img src="assets/cctv/step1_dashboard.png" alt="YOLOv8 Model Loaded Dashboard" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag">Phase 01: Initialization</div>
+                <h4 class="cctv-step-heading">Model Loading & GUI Architecture</h4>
+                <p class="cctv-step-text">
+                  The system launches a dedicated graphical control interface. When <strong>"Generate & Load YoloV8 Model"</strong> is triggered, the pre-trained weights and fine-tuned neural network architecture are loaded into memory with CUDA GPU/CPU acceleration.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">⚡</span> <div><strong>YOLOv8 Architecture</strong>: State-of-the-art anchor-free object detection for single-pass spatial feature extraction.</div></div>
+                  <div class="point-item"><span class="point-icon">🖥️</span> <div><strong>Desktop Control Panel</strong>: Intuitive command triggers for images, videos, training graphs, and model weights.</div></div>
+                  <div class="point-item"><span class="point-icon">🔄</span> <div><strong>Status Verification</strong>: Live console confirms <code>YoloV8 Model Loaded</code> and ready for inference.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="cctv-slide" data-slide="2">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper">
+                <div class="cctv-img-overlay-badge">Step 2 • CCTV & Drone Video Stream Selection</div>
+                <img src="assets/cctv/step2_load_video.png" alt="Loading Video Stream for Crowd Analysis" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag">Phase 02: Ingestion</div>
+                <h4 class="cctv-step-heading">Ingesting Real-Time / Recorded Video Feeds</h4>
+                <p class="cctv-step-text">
+                  Operators click <strong>"Crowd Management from Videos"</strong> to feed continuous multi-camera CCTV feeds, drone footage (e.g. <code>video1.mp4</code>, <code>video2.mp4</code>), or live network streams into the processing queue.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">📹</span> <div><strong>Multi-Source Compatibility</strong>: Ingests stationary surveillance cameras, aerial drone footage, and test files.</div></div>
+                  <div class="point-item"><span class="point-icon">🎞️</span> <div><strong>Frame Decomposition</strong>: OpenCV video capture pipeline buffers frames seamlessly for real-time inferencing.</div></div>
+                  <div class="point-item"><span class="point-icon">⚙️</span> <div><strong>Adaptive FPS Handling</strong>: Dynamically scales frame sampling rate based on crowd density and hardware load.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="cctv-slide" data-slide="3">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper">
+                <div class="cctv-img-overlay-badge">Step 3 • Static High-Resolution Frame Selection</div>
+                <img src="assets/cctv/step3_load_image.png" alt="Selecting Images for Density Estimation" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag">Phase 03: High-Res Analysis</div>
+                <h4 class="cctv-step-heading">Loading Static High-Density Images</h4>
+                <p class="cctv-step-text">
+                  Selecting <strong>"Crowd Management from Images"</strong> allows operators to run deep diagnostic inspections on high-resolution snapshot captures (e.g. <code>1.jpg</code>, <code>2.jpg</code>, <code>3.jpg</code>, <code>7.jpg</code>) from stadium stands, public rallies, or workplace floors.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">🏟️</span> <div><strong>Macro & Micro Perspectives</strong>: Analyzes wide-angle camera views with perspective distortion compensation.</div></div>
+                  <div class="point-item"><span class="point-icon">🔍</span> <div><strong>Small Object Resolution</strong>: Identifies distant individuals even in low contrast or cluttered backgrounds.</div></div>
+                  <div class="point-item"><span class="point-icon">📁</span> <div><strong>Batch Dataset Processing</strong>: Supports rapid multi-image benchmarking to assess safety compliance.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="cctv-slide" data-slide="4">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper">
+                <div class="cctv-img-overlay-badge">Step 4 • Real-Time Drone & Video Tracking</div>
+                <img src="assets/cctv/step4_video_detection.png" alt="Drone Object Detection from Video" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag">Phase 04: Live Video Tracking</div>
+                <h4 class="cctv-step-heading">Real-Time Object Detection & Tracking from Video</h4>
+                <p class="cctv-step-text">
+                  The YOLOv8 deep learning engine processes video in real-time. Bounding boxes (green) isolate each human target while unique ID trackers (red numeric tags: <code>19, 34, 40, 16, 32, 61...</code>) track individual movement paths across consecutive frames.
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">🎯</span> <div><strong>Unique Multi-Target Tracking</strong>: Assigns persistent spatial IDs to track movement vectors and direction of crowd flow.</div></div>
+                  <div class="point-item"><span class="point-icon">🚨</span> <div><strong>Crime Prevention & Anomaly Detection</strong>: Detects bottleneck formation, sudden running (stampede precursors), or perimeter intrusions.</div></div>
+                  <div class="point-item"><span class="point-icon">📊</span> <div><strong>Real-Time Headcount</strong>: Instant aggregate tally of active individuals in the monitored sector.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="cctv-slide" data-slide="5">
+            <div class="cctv-slide-grid">
+              <div class="cctv-img-wrapper">
+                <div class="cctv-img-overlay-badge">Step 5 • Precision Crowd Count & Density Mapping</div>
+                <img src="assets/cctv/step5_image_detection.png" alt="Drone Object Detection from Image" class="cctv-slide-img">
+              </div>
+              <div class="cctv-info-panel">
+                <div class="cctv-step-tag">Phase 05: Density & Analytics</div>
+                <h4 class="cctv-step-heading">Precision Density Estimation & Count Verification</h4>
+                <p class="cctv-step-text">
+                  The model generates comprehensive bounding boxes with numbered ID indices across crowded facilities (e.g. sports arena, assembly areas). Overlapping targets and occlusions are resolved using Non-Maximum Suppression (NMS).
+                </p>
+                <div class="cctv-key-points">
+                  <div class="point-item"><span class="point-icon">🧮</span> <div><strong>Automated Census & Density Metrics</strong>: Computes precise headcounts across sub-zones to flag high-risk crowd build-up.</div></div>
+                  <div class="point-item"><span class="point-icon">🏢</span> <div><strong>Workplace Monitoring</strong>: Monitors employee safety zones, factory clearance, and occupancy limits.</div></div>
+                  <div class="point-item"><span class="point-icon">📈</span> <div><strong>Scalable Deployment</strong>: Integrates seamlessly with existing legacy CCTV camera infrastructure with zero hardware replacement.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slide Footer Controls -->
+        <div class="cctv-controls-footer">
+          <button id="cctv-prev-btn" class="cctv-nav-btn" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Previous Step</span>
+          </button>
+
+          <div class="cctv-step-counter">
+            Step <span id="cctv-current-step-num">1</span> of <span>5</span>
+          </div>
+
+          <button id="cctv-next-btn" class="cctv-nav-btn primary">
+            <span>Next Step</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast-notification"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
